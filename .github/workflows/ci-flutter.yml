@@ -1,0 +1,33 @@
+
+### `.github/workflows/ci-flutter.yml` (skip in template repo if no `pubspec.yaml` yet)
+
+```yaml
+name: CI (Flutter)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Pub get
+        if: hashFiles('app/pubspec.yaml') != ''
+        working-directory: app
+        run: flutter pub get
+
+      - name: Analyze
+        if: hashFiles('app/pubspec.yaml') != ''
+        working-directory: app
+        run: flutter analyze

@@ -15,3 +15,10 @@ build/
 out/
 bin/
 obj/
+
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub-cache/
+app/build/
+*.iml
