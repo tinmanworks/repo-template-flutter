@@ -1,0 +1,21 @@
+name: Release (Tag)
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  draft-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create or update draft release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ github.ref_name }}
+          draft: true
+          generateReleaseNotes: true
+          allowUpdates: true
