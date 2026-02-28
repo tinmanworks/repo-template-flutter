@@ -194,18 +194,15 @@ This section applies only to this Doctrine repository.
 
 ### Branch model
 
-- `master` -> stable snapshots (may include Draft files)
-- `develop` -> working branch
+- `develop` -> integration branch for ongoing changes
+- `master` -> stable branch for promoted releases
 - `feature/*` -> short-lived heavy refactor branches
 
 ### Release process
 
-1. Create `release/vX.Y` from `develop`.
-2. On release branch:
-   - Promote ready files `Draft -> Stable`.
-   - Leave others `Draft`.
-   - Update [`RELEASE_NOTES.md`](RELEASE_NOTES.md).
-3. Merge release to `master`.
+1. Ensure release-ready work is merged into `develop`.
+2. Promote `develop` to `master` using a PR with base `master` and head `develop`.
+3. Merge only after required checks pass.
 4. Create signed tag on `master`:
    - `git tag -s vX.Y -m "Release vX.Y"`
 5. Push `master` and tag:
