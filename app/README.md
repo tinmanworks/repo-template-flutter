@@ -9,4 +9,6 @@ Run from inside this directory:
 ```bash
 flutter create .
 flutter pub get
+flutter analyze
+flutter test
 ```
