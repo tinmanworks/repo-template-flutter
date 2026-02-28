@@ -1,14 +1,12 @@
 # Flutter App
 
-This directory is intended to be the Flutter project root.
+This folder contains a committed starter Flutter app used by the template baseline and CI.
 
-## Create the App
-
-Run from inside this directory:
+## Local Commands
 
 ```bash
-flutter create .
 flutter pub get
 flutter analyze
 flutter test
+flutter run
 ```

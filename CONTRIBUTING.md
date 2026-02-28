@@ -22,5 +22,11 @@
 - Verify local signing is configured before pushing.
 
 ## Code Quality
-- Run `flutter analyze` before opening a PR.
-- Run `flutter test` for app changes.
+- Core-gated checks (blocking):
+  - `flutter analyze`
+  - `flutter test`
+- Advisory checks (non-blocking):
+  - `flutter format --set-exit-if-changed lib test`
+- Template integrity checks:
+  - `bash tools/validate-template.sh core`
+  - `bash tools/validate-template.sh advisory`
