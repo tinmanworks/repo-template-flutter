@@ -17,6 +17,13 @@ Flutter template with a committed starter app, doctrine-aligned governance, and 
 ## Why It Exists
 - Provide a ready-to-run Flutter baseline with consistent governance and CI quality bars.
 
+## Use This Template
+
+1. Click **Use this template** on GitHub to create a new repository.
+2. Rename package/module identifiers and update ownership metadata.
+3. Review `.env.example` and update environment configuration for your target project.
+4. Run validation and CI checks before first release.
+
 ## Quickstart
 
 ### Prerequisites
